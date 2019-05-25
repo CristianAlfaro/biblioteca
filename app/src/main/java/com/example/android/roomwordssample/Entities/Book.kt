@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample
+package com.example.android.roomwordssample.Entities
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -32,7 +32,7 @@ import androidx.room.PrimaryKey
  */
 
 @Entity(tableName = "book_table")
-data class Word (
+data class Book (
         @PrimaryKey @ColumnInfo(name = "Titulo") val titulo: String,
         @ColumnInfo (name = "Autor") val autores: String,
         @ColumnInfo (name = "Editorial") val editorial: String,

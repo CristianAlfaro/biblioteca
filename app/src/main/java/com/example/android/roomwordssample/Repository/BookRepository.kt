@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample
+package com.example.android.roomwordssample.Repository
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -17,24 +17,25 @@ package com.example.android.roomwordssample
  */
 
 import androidx.lifecycle.LiveData
-import androidx.annotation.WorkerThread
+import com.example.android.roomwordssample.Entities.Book
+import com.example.android.roomwordssample.DAO.BookDao
 
 /**
  * Abstracted Repository as promoted by the Architecture Guide.
  * https://developer.android.com/topic/libraries/architecture/guide.html
  */
-class WordRepository(private val wordDao: WordDao) {
+class BookRepository(private val bookDao: BookDao) {
 
     // Room executes all queries on a separate thread.
     // Observed LiveData will notify the observer when the data has changed.
-    val allWords: LiveData<List<Word>> = wordDao.getAlphabetizedWords()
-    val allFavoriteWords: LiveData<List<Word>> = wordDao.getAllFavorites()
+    val allWords: LiveData<List<Book>> = bookDao.getAlphabetizedWords()
+    val allFavoriteWords: LiveData<List<Book>> = bookDao.getAllFavorites()
 
     // The suspend modifier tells the compiler that this must be called from a
     // coroutine or another suspend function.
     // This ensures that you're not doing any long running operations on the main
     // thread, blocking the UI.
-    suspend fun insert(word: Word) {
-        wordDao.insert(word)
+    suspend fun insert(book: Book) {
+        bookDao.insert(book)
     }
 }

@@ -32,7 +32,7 @@ limitations under the License. -->
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- The default font for RecyclerView items is too small.
-    The margin is a simple delimiter between the words. -->
+    The margin is a simple delimiter between the books. -->
     <style name="word_title">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">26dp</item>

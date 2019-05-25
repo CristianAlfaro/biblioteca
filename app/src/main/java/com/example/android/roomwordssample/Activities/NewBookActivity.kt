@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample
+package com.example.android.roomwordssample.Activities
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -23,12 +23,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import com.example.android.roomwordssample.R
 
 /**
  * Activity for entering a word.
  */
 
-class NewWordActivity : AppCompatActivity() {
+class NewBookActivity : AppCompatActivity() {
 
     private lateinit var editTituloView: EditText
     private lateinit var editAutorView: EditText

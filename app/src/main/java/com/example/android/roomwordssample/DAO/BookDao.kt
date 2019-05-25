@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample
+package com.example.android.roomwordssample.DAO
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -18,6 +18,7 @@ package com.example.android.roomwordssample
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import com.example.android.roomwordssample.Entities.Book
 
 /**
  * The Room Magic is in this file, where you map a Java method call to an SQL query.
@@ -29,22 +30,22 @@ import androidx.room.*
  */
 
 @Dao
-interface WordDao {
+interface BookDao {
 
     // LiveData is a data holder class that can be observed within a given lifecycle.
     // Always holds/caches latest version of data. Notifies its active observers when the
     // data has changed. Since we are getting all the contents of the database,
     // we are notified whenever any of the database contents have changed.
     @Query("SELECT * from book_table ORDER BY Titulo ASC")
-    fun getAlphabetizedWords(): LiveData<List<Word>>
+    fun getAlphabetizedWords(): LiveData<List<Book>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insert(word: Word)
+    suspend fun insert(book: Book)
 
     @Query("DELETE FROM book_table")
     suspend fun deleteAll()
 
     @Query("SELECT * FROM book_table WHERE Favorito")
-    fun getAllFavorites() : LiveData<List<Word>>
+    fun getAllFavorites() : LiveData<List<Book>>
 
 }

@@ -1,4 +1,4 @@
-package com.example.android.roomwordssample
+package com.example.android.roomwordssample.Adapter
 
 /*
  * Copyright (C) 2017 Google Inc.
@@ -23,22 +23,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.cardview.widget.CardView
+import com.example.android.roomwordssample.Entities.Book
+import com.example.android.roomwordssample.R
 
 
-class WordListAdapter internal constructor(
+abstract class BookListAdapter internal constructor(
         context: Context
-) : RecyclerView.Adapter<WordListAdapter.WordViewHolder>() {
+) : RecyclerView.Adapter<BookListAdapter.WordViewHolder>() {
+
+    abstract fun addListener(holder: WordViewHolder, titulo:String, caratula:Int, favorito:String, autor:String)
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
-    private var words = emptyList<Word>() // Cached copy of words
+    private var words = emptyList<Book>() // Cached copy of words
 
     inner class WordViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val wordItemView: TextView = itemView.findViewById(R.id.textView)
         val autorTV: TextView = itemView.findViewById(R.id.textViewAutor)
         val caratulaIV: ImageView = itemView.findViewById(R.id.iv_caratula)
         val favoriteTV: TextView = itemView.findViewById(R.id.bt_favorite)
-
+        val book_container:LinearLayout = itemView.findViewById(R.id.linear_layout_book)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
@@ -52,22 +58,27 @@ class WordListAdapter internal constructor(
         holder.wordItemView.text = current.titulo
         holder.autorTV.text = current.autores
         holder.caratulaIV.setImageResource(current.caratula)
+        var fav = ""
         if (current.favorito){
             holder.favoriteTV.text = "Quitar de favoritos"
+            fav = "Quitar de favoritos"
             holder.favoriteTV.setOnClickListener {
 
             }
         } else {
             holder.favoriteTV.text = "Agregar a favoritos"
+            fav = "Agregar a favoritos"
             holder.favoriteTV.setOnClickListener {
 
             }
         }
 
+        addListener(holder,current.titulo,current.caratula,fav, current.autores )
+
     }
 
-    internal fun setWords(words: List<Word>) {
-        this.words = words
+    internal fun setWords(books: List<Book>) {
+        this.words = books
         notifyDataSetChanged()
     }
 
