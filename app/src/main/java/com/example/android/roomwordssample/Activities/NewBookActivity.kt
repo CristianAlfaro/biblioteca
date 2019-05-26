@@ -57,8 +57,8 @@ class NewBookActivity : AppCompatActivity() {
                 val favorito = true
                 replyIntent.putExtra(TITULO, titulo)
                 replyIntent.putExtra(AUTOR, autor)
-                replyIntent.putExtra(EDITORIAL, resumen)
-                replyIntent.putExtra(RESUMEN, editorial)
+                replyIntent.putExtra(RESUMEN, resumen)
+                replyIntent.putExtra(EDITORIAL, editorial)
                 replyIntent.putExtra(FAVORITO, favorito)
                 setResult(Activity.RESULT_OK, replyIntent)
             }
@@ -69,9 +69,9 @@ class NewBookActivity : AppCompatActivity() {
     companion object {
         const val TITULO = "titulo"
         const val AUTOR = "autor"
-        const val EDITORIAL = "editorial"
         const val RESUMEN = "resumen"
         const val FAVORITO= "favorito"
+        const val EDITORIAL= "editorial"
     }
 }
 

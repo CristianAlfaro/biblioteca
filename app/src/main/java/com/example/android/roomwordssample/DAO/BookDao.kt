@@ -48,4 +48,7 @@ interface BookDao {
     @Query("SELECT * FROM book_table WHERE Favorito")
     fun getAllFavorites() : LiveData<List<Book>>
 
+    @Update
+    fun update(book: Book)
+
 }

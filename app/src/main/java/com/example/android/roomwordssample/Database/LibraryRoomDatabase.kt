@@ -31,7 +31,7 @@ import kotlinx.coroutines.launch
  * This is the backend. The database. This used to be done by the OpenHelper.
  * The fact that this has very few comments emphasizes its coolness.
  */
-@Database(entities = [Book::class], version = 6)
+@Database(entities = [Book::class], version = 7)
 abstract class LibraryRoomDatabase : RoomDatabase() {
 
     abstract fun wordDao(): BookDao
@@ -98,14 +98,14 @@ abstract class LibraryRoomDatabase : RoomDatabase() {
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", True, R.drawable.harry)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry, "Magia, Ciencia ficcion")
             bookDao.insert(word)
 
             word = Book("Harry Potter y la camara secreta", "J.K Rowling", "Editorial Salamandra", "Harry Potter y la piedra filosofal es el primer libro de una serie de siete, fue publicado en el Reino Unido el 30 de junio de 1997 y en español en marzo de 1999.\n" +
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry2)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry2, "Magia, Ciencia ficcion")
 
             bookDao.insert(word)
 
@@ -113,14 +113,14 @@ abstract class LibraryRoomDatabase : RoomDatabase() {
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", True, R.drawable.harry3)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry3, "Magia, Ciencia ficcion")
             bookDao.insert(word)
 
             word = Book("Harry Potter y el caliz de fuego", "J.K Rowling", "Editorial Salamandra", "Harry Potter y la piedra filosofal es el primer libro de una serie de siete, fue publicado en el Reino Unido el 30 de junio de 1997 y en español en marzo de 1999.\n" +
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry4)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry4, "Magia, Ciencia ficcion")
 
             bookDao.insert(word)
 
@@ -128,14 +128,14 @@ abstract class LibraryRoomDatabase : RoomDatabase() {
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", True, R.drawable.harry5)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry5, "Magia, Ciencia ficcion")
             bookDao.insert(word)
 
             word = Book("Harry Potter y el principe mestizo", "J.K Rowling", "Editorial Salamandra", "Harry Potter y la piedra filosofal es el primer libro de una serie de siete, fue publicado en el Reino Unido el 30 de junio de 1997 y en español en marzo de 1999.\n" +
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry6)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry6, "Magia, Ciencia ficcion")
 
             bookDao.insert(word)
 
@@ -143,7 +143,7 @@ abstract class LibraryRoomDatabase : RoomDatabase() {
                     "\n" +
                     "Se trata de uno de los libros más vendidos de la historia, las estimaciones de sus ventas mundiales superan los 110 millones de copias.\n" +
                     "\n" +
-                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", True, R.drawable.harry7)
+                    "Harry Potter se ha quedado huérfano y vive en casa de sus abominables tíos y del insoportable primo Dudley.", False, R.drawable.harry7, "Magia, Ciencia ficcion")
 
             bookDao.insert(word)
 

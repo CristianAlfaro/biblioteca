@@ -38,4 +38,8 @@ class BookRepository(private val bookDao: BookDao) {
     suspend fun insert(book: Book) {
         bookDao.insert(book)
     }
+
+    suspend fun update(book: Book){
+        bookDao.insert(book)
+    }
 }

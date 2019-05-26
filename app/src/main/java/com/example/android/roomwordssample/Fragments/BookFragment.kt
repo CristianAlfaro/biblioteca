@@ -16,6 +16,9 @@ private const val TITULO = "titulo"
 private const val CARATULA = "caratula"
 private const val FAVORITO = "favorito"
 private const val AUTOR = "autor"
+private const val EDITORIAL= "editorial"
+private const val RESUMEN= "resumen"
+private const val TAGS= "tags"
 
 
 class BookFragment : Fragment() {
@@ -24,6 +27,9 @@ class BookFragment : Fragment() {
     private var favorito: String? = null
     private var autor: String? = null
     private var caratula: Int? = null
+    private var editorial: String? = null
+    private var resumen: String? = null
+    private var tags: String? = null
     private var listener: OnFragmentInteractionListener? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,6 +39,9 @@ class BookFragment : Fragment() {
             favorito = it.getString(FAVORITO)
             autor = it.getString(AUTOR)
             caratula = it.getInt(CARATULA)
+            editorial= it.getString(EDITORIAL)
+            resumen= it.getString(RESUMEN)
+            tags= it.getString(TAGS)
         }
     }
 
@@ -44,9 +53,15 @@ class BookFragment : Fragment() {
             var caratula = arguments!!.getInt("caratula")
             var autor = arguments?.getString("autor")
             var favorito = arguments?.getString("favorito")
+            var editorial= arguments?.getString("editorial")
+            var resumen= arguments?.getString("resumen")
+            var tags = arguments?.getString("tags")
             textViewAutor.text = autor
             textView.text = titulo
             iv_caratula.setImageResource(caratula)
+            textViewEditorial.text = editorial
+            textViewResumen.text = resumen
+            textViewTags.text = tags
             bt_favorite.text = favorito
         }
     }
@@ -79,13 +94,16 @@ class BookFragment : Fragment() {
     companion object {
 
         @JvmStatic
-        fun newInstance(titulo: String, autor:String, favorito:String, caratula:Int) =
+        fun newInstance(titulo: String, autor:String, favorito:String, caratula:Int, editorial: String, resumen: String, tags:String) =
                 BookFragment().apply {
                     arguments = Bundle().apply {
                         putString(TITULO, titulo)
                         putString(FAVORITO,favorito)
                         putString(AUTOR,autor)
                         putInt(CARATULA,caratula)
+                        putString(EDITORIAL,editorial)
+                        putString(RESUMEN, resumen)
+                        putString(TAGS, tags)
                     }
                 }
     }

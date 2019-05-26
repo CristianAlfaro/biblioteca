@@ -89,9 +89,10 @@ class FavoriteFragment : Fragment(), BookFragment.OnFragmentInteractionListener 
     fun initAll(view: View){
         val recyclerView = view.recyclerview
         val adapter = object : BookListAdapter(view.context){
-            override fun addListener(holder: WordViewHolder, titulo: String, caratula: Int, favorito: String, autor: String) {
+            override fun addListener(holder: WordViewHolder, titulo: String, caratula: Int, favorito: String, autor: String, editorial: String, resumen: String, tags: String) {
                 Log.d("dsd","")
             }
+
 
         }
         recyclerView.adapter = adapter

@@ -38,5 +38,6 @@ data class Book (
         @ColumnInfo (name = "Editorial") val editorial: String,
         @ColumnInfo (name = "Resumen") val resumen: String,
         @ColumnInfo (name = "Favorito") var favorito: Boolean,
-        @ColumnInfo (name = "Caratula") val caratula: Int
+        @ColumnInfo (name = "Caratula") val caratula: Int,
+        @ColumnInfo (name = "Tags") val tags: String
 )

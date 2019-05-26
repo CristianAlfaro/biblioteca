@@ -3,23 +3,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_margin="0dp"
+    android:layout_marginTop="60dp"
     android:padding="5dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:padding="5dp"
         card_view:cardCornerRadius="10dp"
         card_view:cardElevation="15dp"
         card_view:cardUseCompatPadding="true">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
             android:id="@+id/book_container_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -33,10 +35,10 @@
                 android:padding="10dp"
                 android:paddingStart="10dp"
                 android:paddingLeft="10dp"
-                android:paddingTop="10dp"
+                android:paddingTop="40dp"
                 android:paddingEnd="10dp"
                 android:paddingRight="10dp"
-                android:paddingBottom="10dp"
+                android:paddingBottom="40dp"
                 android:textSize="20sp" />
 
             <ImageView
@@ -63,10 +65,36 @@
                 android:paddingBottom="10dp"
                 android:textSize="16sp" />
 
+            <TextView
+                android:id="@+id/textViewEditorial"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textSize="16dp" />
+
+            <TextView
+                android:id="@+id/textViewResumen"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:padding="20dp"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textViewTags"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:padding="10dp" />
+
             <Button
                 android:id="@+id/bt_favorite"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
                 android:background="#00FFFFFF"
                 android:gravity="end"
                 android:padding="10dp"

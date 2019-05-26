@@ -34,7 +34,7 @@ abstract class BookListAdapter internal constructor(
         context: Context
 ) : RecyclerView.Adapter<BookListAdapter.WordViewHolder>() {
 
-    abstract fun addListener(holder: WordViewHolder, titulo:String, caratula:Int, favorito:String, autor:String)
+    abstract fun addListener(holder: WordViewHolder, titulo:String, caratula:Int, favorito:String, autor:String, editorial:String, resumen:String, tags:String)
 
     private val inflater: LayoutInflater = LayoutInflater.from(context)
     private var words = emptyList<Book>() // Cached copy of words
@@ -73,7 +73,7 @@ abstract class BookListAdapter internal constructor(
             }
         }
 
-        addListener(holder,current.titulo,current.caratula,fav, current.autores )
+        addListener(holder,current.titulo,current.caratula,fav, current.autores, current.editorial, current.resumen, current.tags)
 
     }
 

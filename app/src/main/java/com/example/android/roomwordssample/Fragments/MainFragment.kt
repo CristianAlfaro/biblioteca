@@ -90,9 +90,9 @@ class MainFragment : Fragment(), BookFragment.OnFragmentInteractionListener, Fav
 
         val recyclerView = view.recyclerview
         val adapter = object : BookListAdapter(view.context){
-            override fun addListener(holder:WordViewHolder,titulo: String, caratula: Int, favorito: String, autor: String) {
+            override fun addListener(holder:WordViewHolder,titulo: String, caratula: Int, favorito: String, autor: String, editorial: String, resumen: String, tags: String) {
                 holder.book_container.setOnClickListener {
-                    val bookFragment = BookFragment.newInstance(titulo, autor, favorito, caratula)
+                    val bookFragment = BookFragment.newInstance(titulo, autor, favorito, caratula,editorial, resumen, tags)
                     fragmentManager!!.beginTransaction().replace(R.id.main_fragment_content,bookFragment).addToBackStack("").commit()
                 }
             }

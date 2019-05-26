@@ -20,4 +20,5 @@ limitations under the License. -->
     <color name="buttonLabel">#d3d3d3</color>
     <color name="backgroud_tittle">#FFFFFF</color>
     <color name="background_allInformation">#FFFFFF</color>
+    <color name="backgroud_white">#ffffff</color>
 </resources>
